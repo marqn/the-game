@@ -4,15 +4,16 @@ function Game() {
     this.proponowanaWartosc = 50;
     this.max = 100;
     this.min = 0;
+    this.czyWygrana = false;
 }
 
 
 Game.prototype.sprawdzHandler = function ()
 {
-    console.log(this.proponowanaWartosc + " : " + this.wylosowanyNumer);
+    console.log(this.proponowanaWartosc + " : " + this.wylosowanyNumer + " " + this.czyWygrana);
 
     if (this.proponowanaWartosc === this.wylosowanyNumer) {
-        alert("Wygra³eœ");
+        this.czyWygrana = true;
         return;
     }
 

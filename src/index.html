@@ -14,13 +14,16 @@
 <div>
     <p id="cookie">Korzystanie z witryny oznacza zgodę na wykorzystywanie plików cookie zgodnie z aktualnymi ustawieniami przeglądarki. <a href="http://pl.wikipedia.org/wiki/Ciasteczko">Więcej &raquo;</a></p>
 
-    <p>{{ game.wylosowanyNumer}}</p>
+    <!--<p>{{ game.wylosowanyNumer}}</p>-->
 
-    <p>Wprowadź liczbę z zakresu do 0 do 100:</p>
+    <p ng-hide="game.czyWygrana">Wprowadź liczbę z zakresu do 0 do 100:</p>
+
+    <p ng-show="game.czyWygrana">Wygrałes w {{game.iloscKrokow}} krokach</p>
+
     <p><input type="number" max="{{game.max}}" min="{{game.min}}" ng-model="game.proponowanaWartosc" /></p>
 
     <div>
-        <button type="button" ng-click="check()" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+        <button ng-hide="game.czyWygrana" type="button" ng-click="check()" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
             Sprawdź
         </button>
         <p>Liczba kroków:{{game.iloscKrokow}}</p>
