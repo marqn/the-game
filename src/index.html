@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+    <script src="main.js"></script>
+   <link type="text/css" rel="stylesheet" href="css/css.css" />
+    <meta charset="UTF-8">
+    <title>the game</title>
+</head>
+<body ng-controller="appController" >
+
+<div>
+    <p id="cookie">Korzystanie z witryny oznacza zgodę na wykorzystywanie plików cookie zgodnie z aktualnymi ustawieniami przeglądarki. <a href="http://pl.wikipedia.org/wiki/Ciasteczko">Więcej &raquo;</a></p>
+
+    <p>{{ game.wylosowanyNumer}}</p>
+
+    <p>Wprowadź liczbę z zakresu do 0 do 100:</p>
+    <p><input type="number" max="{{game.max}}" min="{{game.min}}" ng-model="game.proponowanaWartosc" /></p>
+
+    <div>
+        <button type="button" ng-click="check()" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+            Sprawdź
+        </button>
+        <p>Liczba kroków:{{game.iloscKrokow}}</p>
+    </div>
+</div>
+</body>
+</html>
