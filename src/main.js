@@ -5,6 +5,7 @@ function Game() {
     this.max = 100;
     this.min = 0;
     this.czyWygrana = false;
+    this.message;
 }
 
 
@@ -14,14 +15,17 @@ Game.prototype.sprawdzHandler = function ()
 
     if (this.proponowanaWartosc === this.wylosowanyNumer) {
         this.czyWygrana = true;
+        this.message = false;
         return;
     }
 
     if(this.proponowanaWartosc < this.wylosowanyNumer) {
+        this.message = "Liczba jaką chcesz odgadnąć jest większa od " + this.proponowanaWartosc;
         this.min = ++this.proponowanaWartosc;
     }
 
     if(this.proponowanaWartosc > this.wylosowanyNumer) {
+        this.message = "Liczba jaką chcesz odgadnąć jest mniejsza od " + this.proponowanaWartosc;
         this.max = --this.proponowanaWartosc;
     }
 

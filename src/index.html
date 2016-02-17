@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>-->
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
@@ -15,6 +17,10 @@
     <p id="cookie">Korzystanie z witryny oznacza zgodę na wykorzystywanie plików cookie zgodnie z aktualnymi ustawieniami przeglądarki. <a href="http://pl.wikipedia.org/wiki/Ciasteczko">Więcej &raquo;</a></p>
 
     <!--<p>{{ game.wylosowanyNumer}}</p>-->
+
+    <div class="alert alert-info" ng-show="game.message">
+        <strong>Wskazówka: </strong> {{game.message}}
+    </div>
 
     <p ng-hide="game.czyWygrana">Wprowadź liczbę z zakresu do 0 do 100:</p>
 
