@@ -4,17 +4,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>-->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
     <script src="main.js"></script>
-   <link type="text/css" rel="stylesheet" href="css/css.css" />
+    <link type="text/css" rel="stylesheet" href="css/css.css"/>
     <meta charset="UTF-8">
     <title>the game</title>
 </head>
-<body ng-controller="appController" >
+<body ng-controller="appController">
 
-<div>
-    <p id="cookie">Korzystanie z witryny oznacza zgodę na wykorzystywanie plików cookie zgodnie z aktualnymi ustawieniami przeglądarki. <a href="http://pl.wikipedia.org/wiki/Ciasteczko">Więcej &raquo;</a></p>
+<p id="cookie">Korzystanie z witryny oznacza zgodę na wykorzystywanie plików cookie zgodnie z aktualnymi ustawieniami
+    przeglądarki. <a href="http://pl.wikipedia.org/wiki/Ciasteczko">Więcej &raquo;</a></p>
+
+<div class="main">
 
     <!--<p>{{ game.wylosowanyNumer}}</p>-->
 
@@ -22,17 +22,18 @@
         <strong>Wskazówka: </strong> {{game.message}}
     </div>
 
-    <p ng-hide="game.czyWygrana">Wprowadź liczbę z zakresu do 0 do 100:</p>
+    <p class="main" ng-hide="game.czyWygrana">Wprowadź liczbę z zakresu do 0 do 100:</p>
 
-    <p ng-show="game.czyWygrana">Wygrałes w {{game.iloscKrokow}} krokach</p>
+    <p class="main" ng-show="game.czyWygrana">Wygrałes w {{game.iloscKrokow}} krokach</p>
 
-    <p><input type="number" max="{{game.max}}" min="{{game.min}}" ng-model="game.proponowanaWartosc" /></p>
+    <p class="main"><input pattern="[\d\.]*" type="number" max="{{game.max}}" min="{{game.min}}" ng-model="game.proponowanaWartosc"/></p>
 
-    <div>
-        <button ng-hide="game.czyWygrana" type="button" ng-click="check()" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+    <div class="main">
+        <button ng-hide="game.czyWygrana" type="button" ng-click="check()" class="btn btn-primary" data-toggle="button"
+                aria-pressed="false" autocomplete="off">
             Sprawdź
         </button>
-        <p>Liczba kroków:{{game.iloscKrokow}}</p>
+        <p class="main">Liczba kroków:{{game.iloscKrokow}}</p>
     </div>
 </div>
 </body>
